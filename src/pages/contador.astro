@@ -1,0 +1,76 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+// import { Button } from "../components/Button";
+// se renderiza en el momento del compilado
+export const prerender = true;
+// export const prerender = false  que se compile en el servidor en cada peticion
+// import Animacionesimg from "../components/Animacionesimg.astro";
+
+import Contadorregresivo from "../components/Contadorregresivo.astro";
+---
+
+<DefaultLayout>
+  <meta slot="header" charset="utf-8" />
+  <link slot="header" rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta slot="header" name="viewport" content="width=device-width" />
+  <meta slot="header" name="generator" content={Astro.generator} />
+  <title slot="header">Contador</title>
+  <h1 class="text-center text-3xl font-bold mb-6 mt-3">Contador </h1>
+<code>
+  <!-- const actualizador = setInterval(function () {
+    // Definimos el tiempo de inicio en milisegundos
+    const inicioClase = new Date("March 1, 2021 10:00:00").getTime();
+
+    // Definimos el tiempo de ahora en milisegundos
+    const tiempoActual = new Date().getTime();
+
+    // Calculamos la diferencia entre el inicio y el tiempo actual;
+    let tiempoRestante = inicioClase - tiempoActual;
+
+    // Convertimos los milisegundos en segundos 1s = 1000 ms;
+    tiempoRestante /= 1000;
+
+    // Calculamos los dias restantes
+    const dias = Math.floor(tiempoRestante / (60 * 60 * 24));
+
+    // Calculamos las horas restantes
+    const horas = Math.floor((tiempoRestante % (60 * 60 * 24)) / (60 * 60));
+
+    // Calculamos los minutos restantes
+    const minutos = Math.floor((tiempoRestante % (60 * 60)) / 60);
+
+    // Calculamos los segundos restantes
+    const segundos = Math.floor(tiempoRestante % 60);
+
+    // Verificación para asegurarse de que estamos en un entorno de navegador antes de intentar acceder al DOM
+    if (typeof document !== "undefined") {
+      // const contador = document.getElementById("contador");
+
+      // Agregamos los elementos HTML con el valor del tiempo al contenedor con el id contador
+      // contador.innerHTML = `
+        <div>
+            // <span>${dias}</span>
+            <span class="texto">Dias</span>
+        </div> 
+        <div>
+            // <span>${horas}</span>
+            <span class="texto">Horas</span>
+        </div>
+        <div>
+            // <span>${minutos}</span>
+            <span class="texto">Minutos</span>
+        </div>
+        <div>
+            // <span>${segundos}</span>
+            <span class="texto">Segundos</span>
+        </div>
+      `;
+    }
+  }, 1000); -->
+</code>
+
+
+  <!-- <Button client:visible /> -->
+
+  <Contadorregresivo />
+</DefaultLayout>

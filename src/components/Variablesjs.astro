@@ -1,0 +1,336 @@
+---
+// A. Uso de var let y const
+
+// 1. var y let se pueden declarar sin iniciar;
+// var gato;
+// let carro;
+// console.log(gato);
+// console.log(carro);
+
+// 2. var se puede re declarar
+
+// var gato = "Felix";
+// console.log(gato);
+// var gato = "Bobby";
+// console.log(gato);
+
+// 3. let no se puede declarar de nuevo;
+
+// let perro = "Tobby";
+// // let perro = 'Bobby';
+// console.log(perro);
+
+// perro = "Bobby";
+// console.log(perro);
+
+// // 4 const no se puede declarar sin iniciar
+
+// // const direccion;
+// const direccion = "avenida Paseos";
+// console.log(direccion);
+
+// //5 const no se puede reasignar
+
+// // direccion = "avenida Principal";
+// console.log(direccion);
+
+// //6 scope (alcance)
+
+// // var es visible en la funcion donde se declaro o global
+// //let y const son visibles en el bloque donde se declararon o globales
+
+// // B. Reglas para nombrar Variables
+
+// //1. No se puede usar palabras reservadas (function, var, for, while, etc.)
+
+// //2. No pueden empezar con un dígito
+// // let 2x = 6;
+
+// //3. Pueden empezar con una letra, guión bajo o $
+// let $car = "ford mustang";
+// console.log($car);
+
+// //4. Para nombres complejos se usa notación de camello:
+// // let userName = 'Juan';
+
+// //C Tipo de Datos en JavaScript
+
+// //1 number
+// let velocidad = 98.5;
+// console.log(typeof velocidad);
+
+// //2 string
+
+// let userName = "Sergio";
+// console.log(typeof userName);
+
+// //3 boolean
+
+// let isActive = true;
+// console.log(typeof isActive);
+
+// //4 array (matrices)
+// let carros = ["Ford Mustang", "Toyota Corolla", "Honda Accord"];
+// console.log(typeof carros);
+
+// //5 object
+// let carro = { modelo: "Ford Mustang", potencia: 300, velocidad: 200 };
+// console.log(typeof carro);
+
+// //undefined
+// let nombre;
+// console.log(typeof nombre);
+
+// //null
+
+// let edad = null;
+// console.log(typeof edad);
+
+// const array = [1, 2, 3, 4, 5];
+
+// const sum = array.reduce(function (a, b) {
+//   return a + b;
+// }, 0);
+// console.log(sum);
+
+// /*Tipo de Datos en JavaScript*/
+
+// /*1 number -(2^53 − 1) and (2^53 − 1)*/
+
+// let velocidad = 98.5;
+// console.log(typeof velocidad);
+
+// //2 string
+
+// let userName = "Sergio";
+// console.log(typeof userName);
+
+// //3 boolean
+
+// let isActive = true;
+// console.log(typeof isActive);
+
+// //undefined, una variable cuyo valor aun no ha sido definido
+
+// let nombre;
+// console.log(typeof nombre);
+
+// //null, el valor de nada
+
+// let edad = null;
+// console.log(typeof edad);
+
+// //BigInt (numeros muy grandes)
+
+// let z = 3n ** 55n;
+// console.log(typeof z);
+
+// //Symbol--representa un identificador unico
+
+// let clave = Symbol("Sym");
+// console.log(typeof clave);
+
+// //4 array (matrices)
+
+// let carros = ["Ford Mustang", 500, true];
+// console.log(typeof carros);
+
+// //5 object
+// let carro = { modelo: "Ford Mustang", potencia: 300, velocidad: 200 };
+// console.log(typeof carro);
+
+// /*Copiado por referencia*/
+
+// let x = [2, 4];
+
+// let y = x;
+
+// y.push(5);
+
+// console.log(x);
+// console.log(y);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript | Ejemplos</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+      }
+      p {
+        font-size: 16px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-family: Consolas, monospace;
+      }
+      h1,
+      h2 {
+        font-size: 16px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>JavaScript: Ejemplos</h1>
+    <h2>A. Uso de var, let y const</h2>
+
+    <p>
+      <!-- Aquí va tu código -->
+      <code>
+        // A. Uso de var let y const<br />
+        // 1. var y let se pueden declarar sin iniciar;<br />
+        // var gato;<br />
+        // let carro;<br />
+        // console.log(gato);<br />
+        // console.log(carro);<br />
+        <br />
+        // 2. var se puede re declarar<br />
+        // var gato = "Felix";<br />
+        // console.log(gato);<br />
+        // var gato = "Bobby";<br />
+        // console.log(gato);<br />
+        <br />
+        // 3. let no se puede declarar de nuevo;<br />
+        let perro = "Tobby";<br />
+        // let perro = 'Bobby';<br />
+        console.log(perro);<br />
+        perro = "Bobby";<br />
+        console.log(perro);<br />
+        <br />
+        // 4 const no se puede declarar sin iniciar<br />
+        // const direccion;<br />
+        const direccion = "avenida Paseos";<br />
+        console.log(direccion);<br />
+        <br />
+        // 5 const no se puede reasignar<br />
+        // direccion = "avenida Principal";<br />
+        console.log(direccion);<br />
+        <br />
+        // 6 scope (alcance)<br />
+        // var es visible en la funcion donde se declaro o global<br />
+        // let y const son visibles en el bloque donde se declararon o globales<br
+        />
+      </code>
+    </p>
+
+       <p>
+      <!-- Segundo párrafo -->
+      <code>
+        /*Tipo de Datos en JavaScript*/<br />
+        //1 number -(2^53 − 1) and (2^53 − 1)<br />
+        let velocidad = 98.5;<br />
+        console.log(typeof velocidad);<br />
+        <br />
+        //2 string<br />
+        let userName = 'Sergio';<br />
+        console.log(typeof userName);<br />
+        <br />
+        //3 boolean<br />
+        let isActive = true;<br />
+        console.log(typeof isActive);<br />
+        <br />
+        //undefined, una variable cuyo valor aun no ha sido definido<br />
+        let nombre;<br />
+        console.log(typeof nombre);<br />
+        <br />
+        //null, el valor de nada <br />
+        let edad = null;<br />
+        console.log(typeof edad);<br />
+        <br />
+        //BigInt (numeros muy grandes)<br />
+        let z = 3n ** 55n;<br />
+        console.log(typeof z);<br />
+        <br />
+        //Symbol--representa un identificador unico<br />
+        let clave = Symbol('Sym');<br />
+        console.log(typeof clave);<br />
+        <br />
+        //4 array (matrices)<br />
+        let carros = ['Ford Mustang', 500, true];<br />
+        console.log(typeof (carros));<br />
+        <br />
+        //5 object<br />
+        <!-- let carro = { modelo: 'Ford Mustang', potencia: 300, velocidad: 200 };<br /> -->
+        console.log(typeof carro);<br />
+        <br />
+        /*Copiado por referencia*/<br />
+        let x = [2, 4];<br />
+        let y = x;<br />
+        y.push(5);<br />
+        console.log(x);<br />
+        console.log(y);<br />
+      </code>
+    </p>
+
+    <script>
+      /*Tipo de Datos en JavaScript*/
+
+      /*1 number -(2^53 − 1) and (2^53 − 1)*/
+
+      let velocidad = 98.5;
+      console.log(typeof velocidad);
+
+      //2 string
+
+      let userName = "Sergio";
+      console.log(typeof userName);
+
+      //3 boolean
+
+      let isActive = true;
+      console.log(typeof isActive);
+
+      //undefined, una variable cuyo valor aun no ha sido definido
+
+      let nombre;
+      console.log(typeof nombre);
+
+      //null, el valor de nada
+
+      let edad = null;
+      console.log(typeof edad);
+
+      //BigInt (numeros muy grandes)
+
+      let z = 3n ** 55n;
+      console.log(typeof z);
+
+      //Symbol--representa un identificador unico
+
+      let clave = Symbol("Sym");
+      console.log(typeof clave);
+
+      //4 array (matrices)
+
+      let carros = ["Ford Mustang", 500, true];
+      console.log(typeof carros);
+
+      //5 object
+      let carro = { modelo: "Ford Mustang", potencia: 300, velocidad: 200 };
+      console.log(typeof carro);
+
+      /*Copiado por referencia*/
+
+      let x = [2, 4];
+
+      let y = x;
+
+      y.push(5);
+
+      console.log(x);
+      console.log(y);
+    </script>
+  </body>
+</html>
