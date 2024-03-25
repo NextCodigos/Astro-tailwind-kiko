@@ -1,51 +1,27 @@
 ---
-
+const {
+  post: { title, description, content, created_at, id },
+} = Astro.props;
 ---
 
-<div class="container bg-gray-500 p-12 mx-auto flex flex-wrap">
-  <!-- <div class="bg-gray-800 h-96 m-6 p-12"> -->
-  <div class="bg-gray-800 m-6 p-12 border-red-500 border-4 rounded-xl">
-    <h1 class="text-6x1 text-white text-center">Hello world!</h1>
-  </div>
-  <!-- <div class="bg-gray-800 h-96 m-6 p-12"> -->
-  <div class="bg-gray-800 m-6 p-12 border-red-500 border-4 rounded-xl">
-    <h2 class="text-6x1 text-white text-center">Hello world!</h2>
-  </div>
-  <!-- <div class="bg-gray-800 h-96 m-6 p-12"> -->
-  <div class="bg-gray-800 m-6 p-12 border-red-500 border-4 rounded-xl">
-    <h2 class="text-6x1 text-white text-center">Hello world!</h2>
-  </div>
-</div>
-<br />
-<!-- GRID -->
-<div class="container bg-gray-500 p-12 mx-auto grid grid-rows-1">
-  <!-- <div class="bg-gray-800 h-96 m-6 p-12"> -->
-  <div class="bg-gray-800 m-6 p-12 border-red-500 border-4 rounded-xl">
-    <article>
-      <img
-        src="https://images.pexels.com/photos/40185/mac-freelancer-macintosh-macbook-40185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        alt=""
-        class="rounded"
-      />
-      <h2>The Post Title</h2>
-      <p>A post description</p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-        necessitatibus ducimus corporis ut distinctio obcaecati voluptatem optio
-        reiciendis, nulla reprehenderit perspiciatis qui tempora fuga, magni
-        possimus quae officiis quaerat. Incidunt.
-      </p>
-      <p>10/12/2023 - 16 min read</p>
-    </article>
-    <h2 class="text-6x1 text-white text-center">Hello world!</h2>
-  </div>
-  <!-- <div class="bg-gray-800 h-96 m-6 p-12"> -->
-  <div class="bg-gray-800 m-6 p-12 border-red-500 border-4 rounded-xl">
-    <h2 class="text-6x1 text-white text-center">Hello world!</h2>
-  </div>
-  <!-- <div class="bg-gray-800 h-96 m-6 p-12"> -->
-  <div class="bg-gray-800 m-6 p-12 border-red-500 border-4 rounded-xl">
-    <h2 class="text-6x1 text-white text-center">Hello world!</h2>
-  </div>
-  <br />
-</div>
+<a href={`/posts/${id}`}>
+  <article
+    class="bg-[#1F2937] text-white max-w-sm px-5 py-6 flex flex-col gap-2 rounded"
+  >
+    <img
+      src="https://images.pexels.com/photos/40185/mac-freelancer-macintosh-macbook-40185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      alt=""
+      class="rounded"
+    />
+    <h2 class="text-2xl font-bold">{title}</h2>
+    <p>{description}</p>
+    <p class="text-zinc-300">
+      {content.slice(0, 100) + "..."}
+    </p>
+    <p class="text-zinc-300">
+      {new Date(created_at).toLocaleDateString()} - 16 min read
+    </p>
+  </article>
+</a>
+<!-- Los props son como los argumentos de una funcion es lo que los hace reutiliables con diferentes fotos y contenidos -->
+
