@@ -1,12 +1,5 @@
 ---
 import DefaultLayout from "../layouts/DefaultLayout.astro";
-// import { Button } from "../components/Button";
-// se renderiza en el momento del compilado
-export const prerender = true;
-// export const prerender = false  que se compile en el servidor en cada peticion
-// import Animacionesimg from "../components/Animacionesimg.astro";
-
-import Contadorregresivo from "../components/Contadorregresivo.astro";
 ---
 
 <DefaultLayout>
@@ -14,63 +7,186 @@ import Contadorregresivo from "../components/Contadorregresivo.astro";
   <link slot="header" rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta slot="header" name="viewport" content="width=device-width" />
   <meta slot="header" name="generator" content={Astro.generator} />
-  <title slot="header">Contador</title>
-  <h1 class="text-center text-3xl font-bold mb-6 mt-3">Contador </h1>
-<code>
-  <!-- const actualizador = setInterval(function () {
-    // Definimos el tiempo de inicio en milisegundos
-    const inicioClase = new Date("March 1, 2021 10:00:00").getTime();
-
-    // Definimos el tiempo de ahora en milisegundos
-    const tiempoActual = new Date().getTime();
-
-    // Calculamos la diferencia entre el inicio y el tiempo actual;
-    let tiempoRestante = inicioClase - tiempoActual;
-
-    // Convertimos los milisegundos en segundos 1s = 1000 ms;
-    tiempoRestante /= 1000;
-
-    // Calculamos los dias restantes
-    const dias = Math.floor(tiempoRestante / (60 * 60 * 24));
-
-    // Calculamos las horas restantes
-    const horas = Math.floor((tiempoRestante % (60 * 60 * 24)) / (60 * 60));
-
-    // Calculamos los minutos restantes
-    const minutos = Math.floor((tiempoRestante % (60 * 60)) / 60);
-
-    // Calculamos los segundos restantes
-    const segundos = Math.floor(tiempoRestante % 60);
-
-    // Verificación para asegurarse de que estamos en un entorno de navegador antes de intentar acceder al DOM
-    if (typeof document !== "undefined") {
-      // const contador = document.getElementById("contador");
-
-      // Agregamos los elementos HTML con el valor del tiempo al contenedor con el id contador
-      // contador.innerHTML = `
-        <div>
-            // <span>${dias}</span>
-            <span class="texto">Dias</span>
-        </div> 
-        <div>
-            // <span>${horas}</span>
-            <span class="texto">Horas</span>
+  <title slot="header">My Astro APP</title>
+  <h1 class="text-center text-3xl font-bold mb-6 mt-3">Mis posts</h1>
+  <div
+    class="grid max-w-7xl mx-auto w-full justify-center justify-items-center items-center gap-4 px-2 sm:grid:cols-2 lg:grid-cols-3"
+  >
+  </div>
+  <body>
+    <main class="principal">
+      <div class="secundario">
+        <h1>LA CLASE ABRE EN ...</h1>
+        <div id="contador"></div>
+        <div class="btn-contenedor">
+          <button class="btn">REGISTRATE</button>
         </div>
-        <div>
-            // <span>${minutos}</span>
-            <span class="texto">Minutos</span>
-        </div>
-        <div>
-            // <span>${segundos}</span>
-            <span class="texto">Segundos</span>
-        </div>
-      `;
-    }
-  }, 1000); -->
-</code>
+      </div>
 
+      <script>
+        const actualizador = setInterval(function () {
+          //Definimos el tiempo de inicio en milisegundos
 
-  <!-- <Button client:visible /> -->
+          const inicioClase = new Date("March 1, 2021 10:00:00").getTime();
+          console.log(inicioClase);
 
-  <Contadorregresivo />
+          //Definimos el tiempo de ahora en milisegundos
+
+          const tiempoActual = new Date().getTime();
+          console.log(tiempoActual);
+
+          //Calculamos la diferencia entre el inicio y el tiempo actual;
+
+          let tiempoRestante = inicioClase - tiempoActual;
+          console.log(tiempoRestante);
+          //Convertimos los milisegundos en segundos 1s = 1000 ms;
+
+          tiempoRestante /= 1000;
+          console.log(tiempoRestante);
+          //Calculamos los dias restantes
+
+          const dias = Math.floor(tiempoRestante / (60 * 60 * 24));
+          console.log(dias);
+
+          //Calculamos las horas restantes
+
+          const horas = Math.floor(
+            (tiempoRestante % (60 * 60 * 24)) / (60 * 60)
+          );
+          console.log(horas);
+
+          //Calculamos los minutos restantes
+
+          const minutos = Math.floor((tiempoRestante % (60 * 60)) / 60);
+          console.log(minutos);
+          //Calculamos los segundos restantes
+
+          const segundos = Math.floor(tiempoRestante % 60);
+          console.log(segundos);
+
+          const contador = document.getElementById("contador");
+
+          //Agregamos los elementos HTML con el valor del tiempo al contenedor con el id contador
+
+          contador.innerHTML = `
+<div>
+    <span>${dias}</span>
+    <span class="texto">Dias</span>
+</div> 
+<div>
+    <span>${horas}</span>
+    <span class="texto">Horas</span>
+</div>
+<div>
+    <span>${minutos}</span>
+    <span class="texto">Minutos</span>
+</div>
+<div>
+    <span>${segundos}</span>
+    <span class="texto">Segundos</span>
+</div>
+`;
+        }, 1000);
+
+        console.log("test");
+      </script>
+    </main>
+  </body>
 </DefaultLayout>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap");
+
+  html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    font-family: "Noto Sans JP", sans-serif;
+    overflow: hidden;
+  }
+
+  .principal {
+    position: relative;
+    background: url("/fondo.jpg") no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+  }
+
+  .secundario {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 150px;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .secundario h1 {
+    color: #f3f3f3;
+    font-size: 4rem;
+  }
+
+  .btn-contenedor {
+    margin: 50px;
+    text-align: center;
+  }
+
+  .btn {
+    height: 50px;
+    width: 180px;
+    border-radius: 6px;
+    border: none;
+    font-size: 2rem;
+    padding: 8px;
+    cursor: pointer;
+    background-color: #fb4400;
+    color: #f3f3f3;
+    font-weight: 500;
+    transition: 300ms;
+    font-weight: 600;
+    opacity: 0.75;
+  }
+
+  .btn:hover {
+    background-color: #8e1c00;
+  }
+  #contador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 5rem;
+  }
+
+  #contador div {
+    border: 2px #fb4400 solid;
+    border-radius: 5px;
+    background: #000;
+    opacity: 0.75;
+    margin: 25px;
+    color: white;
+    width: 200px;
+  }
+
+  #contador .texto {
+    display: block;
+    font-size: 2.5rem;
+    color: #fff;
+    background-color: #fb4400;
+    width: 100%;
+    font-weight: 600;
+  }
+</style>
