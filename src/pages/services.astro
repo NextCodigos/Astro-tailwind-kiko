@@ -1,0 +1,22 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+// import { Button } from "../components/Button";
+// se renderiza en el momento del compilado
+export const prerender = true;
+// export const prerender = false  que se compile en el servidor en cada peticion
+import Animacionesimg from "../components/Animacionesimg.astro";
+---
+
+<DefaultLayout>
+  <meta slot="header" charset="utf-8" />
+  <link slot="header" rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta slot="header" name="viewport" content="width=device-width" />
+  <meta slot="header" name="generator" content={Astro.generator} />
+  <title slot="header">My Astro ABOUT</title>
+  <h1 class="text-center text-3xl font-bold mb-6 mt-3">Mis posts ABOUT</h1>
+  <!-- <Button client:visible /> -->
+
+
+  <Animacionesimg />
+</DefaultLayout>
+

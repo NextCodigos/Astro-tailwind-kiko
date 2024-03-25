@@ -3,6 +3,7 @@ import Post from "../components/Post.astro";
 const response = await fetch("http://localhost:3000/posts");
 const posts = await response.json();
 import DefaultLayout from "../layouts/DefaultLayout.astro";
+
 ---
 
 <DefaultLayout>
@@ -17,7 +18,9 @@ import DefaultLayout from "../layouts/DefaultLayout.astro";
   >
     {posts.map((post) => <Post post={post} />)}
   </div>
+
 </DefaultLayout>
+
 
 <!-- Iniciar:
 npm run dev
